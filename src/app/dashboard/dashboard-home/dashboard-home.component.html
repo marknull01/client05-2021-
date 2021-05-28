@@ -1,0 +1,89 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center ">
+
+    <div fxFlex="95%">
+        <div class="container" fxLayout="row" fxLayoutAlign="center none">
+
+            <h2>Welcome back, {{currentUser.fullName}}!</h2>
+
+        </div>
+
+        <div class="container" fxLayout="row" fxLayoutAlign="center none">
+            <div fxFlex="95%" class="text-center no-records animate">
+                <mat-icon>dashboard</mat-icon>
+                <p>This is the dashboard.</p>
+                <!--                <div *ngFor="let project of projects">-->
+                <!--                    <a href="/">{{project.name}}</a>-->
+                <!--                </div>-->
+
+
+                <table class="table table-hover">
+                    <thead>
+                    <tr style="background-color: aquamarine">
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">KEY</th>
+                    </tr>
+                    </thead>
+                    <tbody *ngFor="let project of projects">
+                    <tr>
+                        <a href="/project/{{project.id}}">
+                            <th scope="row">{{project.id}}</th>
+                        </a>
+                        <a href="/project/{{project.id}}">
+                            <th scope="row">{{project.name}}</th>
+                        </a>
+                        <a href="/project/{{project.id}}">
+                            <th scope="row">{{project.key}}</th>
+                        </a>
+                        <!--                        <th scope="row">{{project.name}}</th>-->
+                        <!--                        <th scope="row">{{project.key}}</th>-->
+                    </tr>
+                    </tbody>
+                </table>
+
+
+                <table class="table table-hover">
+                    <thead>
+                    <tr style="background-color: aquamarine">
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">KEY</th>
+                    </tr>
+                    </thead>
+                    <tbody *ngFor="let project of projects">
+                    <tr (click)="getConcreteProject(project.id)">
+                        <td scope="row">{{project.id}}</td>
+                        <td scope="row">{{project.name}}</td>
+                        <td scope="row">{{project.key}}</td>
+                        <!--                        <th scope="row">{{project.name}}</th>-->
+                        <!--                        <th scope="row">{{project.key}}</th>-->
+                    </tr>
+                    </tbody>
+                </table>
+
+
+                <!--        <mat-form-field appearance="fill">-->
+                <!--          <mat-label>Projects</mat-label>-->
+                <!--          <mat-select>-->
+                <!--            <mat-option #project *ngFor="let project of projectArr" value="{{project}}">-->
+                <!--              {{project}}-->
+                <!--            </mat-option>-->
+                <!--          </mat-select>-->
+                <!--        </mat-form-field>-->
+
+                <button type="submit" (click)="makeRequest()">Click</button>
+                <!--        <button type="submit" (click)="makeRequest2()">Click2</button>-->
+                <button type="submit" (click)="getProjects()">Click3</button>
+
+
+
+            </div>
+
+            <mat-icon></mat-icon>
+        </div>
+                    <div style="width: 95%; background-color: aquamarine" class="text-center no-records animate">
+                        <iframe style="width: 100%; height: 100vh"  src="http://localhost:8080"></iframe>
+<!--                        <iframe style="width: 100%; height: 100vh"  src="http://2cadfbb6c40f.ngrok.io"></iframe>-->
+                    </div>
+    </div>
+</div>
